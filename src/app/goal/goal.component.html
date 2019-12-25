@@ -21,30 +21,3 @@
   </div>
   <p *ngIf='goals.length > 5'>You have too many goals</p>
 </div>
-
-<!--(first working test on line through) <h1>My Goals</h1>  
-<hr>
-<ul>
-  <div *ngFor='let goal of goals;let i = index'>
-    <li appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</li> 
-    <button (click)='toggleDetails(i)'>Toggle Details</button>
-    <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
-  </div>
-</ul>
-<p *ngIf='goals.length > 5'>You have too many goals</p>
--->
-
-<!--(second test linethough that does not work) <div> 
-<h1>My Goal List</h1>
-  <hr>
-  <ul>
-    <div *ngFor='let goal of goals;let i = index'>
-      <li appStrikethrough>{{goal.name}}</li>
-      <button (click)='toggleDetails(i)'>Toggle Details</button>
-
-      <app-goal-details *ngIf='goal.showDescription' [goal]='goal' (isComplete) = 'completeGoal($event,i)'></app-goal-details>
-    
-    </div>
-  </ul>
-  <p *ngIf='goals.length > 5'>Your have too many goals</p>
-</div> -->
