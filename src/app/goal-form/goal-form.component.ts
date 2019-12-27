@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Goal } from '../goal';
 
 @Component({
@@ -14,8 +14,8 @@ export class GoalFormComponent implements OnInit {
   ngOnInit() {
   }
 
-}
-/*
+}*/
+
 import { Component, OnInit } from '@angular/core';
 import { Goal } from '../goal';
 
@@ -36,4 +36,4 @@ this.addGoal.emit(this.newGoal);
   ngOnInit() {
   }
 
-}*/
+}
