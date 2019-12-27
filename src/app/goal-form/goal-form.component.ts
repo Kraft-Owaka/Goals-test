@@ -44,7 +44,6 @@ export class GoalFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
 
 
