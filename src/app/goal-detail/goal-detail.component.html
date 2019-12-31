@@ -1,3 +1,9 @@
 <p>{{goal.description}}</p>
 <p>This goal will be complete in {{goal.completeDate|dateCount}} days</p>
-<button (click)= 'goalDelete(true)' class="btn btn-outline-danger">Delete Goal</button>
+<div class="icon">
+    <span><button (click)=likebuttonclick() class="btn btn-warning">likes<i class="fa fa-thumbs-up" aria-hidden="true"></i></button></span>
+   <span>{{numberoflikes}}</span>
+   <span><button (click)=dislikebuttonclick() class="btn btn-success">dislikes<i class="fa fa-thumbs-down" aria-hidden="true"></i></button></span>
+   <span>{{numberofdislikes}}</span><br><br>
+<button (click)= 'goalDelete(true)' class="btn btn-outline-danger">Bleep Quote<i class="fa fa-trash" aria-hidden="true"></i></button>
+</div>

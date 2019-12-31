@@ -38,8 +38,14 @@ export class GoalComponent implements OnInit {
     }
   }
   
+  completeGoal(isComplete, index){
+    if (isComplete) {
+      this.goals.splice(index,1);
+    }
+  }
+  
   constructor() { }
-
+ 
   ngOnInit() {
   }
 

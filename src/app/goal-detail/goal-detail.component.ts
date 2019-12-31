@@ -16,7 +16,14 @@ export class GoalDetailComponent implements OnInit {
   goalDelete(complete:boolean){
     this.isComplete.emit(complete);
   }
-
+  numberoflikes : number=0
+  numberofdislikes : number=0
+     likebuttonclick(){
+     this.numberoflikes++;
+}
+  dislikebuttonclick(){
+  this.numberofdislikes++;
+}
   constructor() { }
 
   ngOnInit() {
