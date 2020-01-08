@@ -5,6 +5,9 @@ import { Goals } from '../goals';
   providedIn: 'root'
 })
 export class GoalService {
+  getGoals(){
+    return Goals
+  }
 
   // = [
   //   new Goal(1, 'Watch finding Nemo', 'Find an online version and watch merlin find his son',new Date(2019,9,14)),
@@ -15,8 +18,12 @@ export class GoalService {
   //   new Goal(6,'Plot my world domination plan','Cause I am an evil overlord',new Date(2019,3,14)),
   // ];
 
-  getGoals(){
-    return Goals
+  getGoal(id){
+    for (let goal of Goals){
+      if (goal.id == id){
+        return goal;
+      }
+    }
   }
 
   constructor() { }

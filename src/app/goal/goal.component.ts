@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Quote } from '../quote-class/quote';
 import { QuoteRequestService } from '../quote-http/quote-request.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-goal',
   templateUrl: './goal.component.html',
@@ -13,15 +14,17 @@ import { Router } from '@angular/router';
 })
 export class GoalComponent implements OnInit {
 
-  goToUrl(id){
-    this.router.navigate(['goals',id])
-  }
   
     goals: Goal[];
     quote:Quote;
     alertService:AlertService;
+
+    goToUrl(id){
+      this.router.navigate(['/goals',id])
+    }
+
   deleteGoal( index){
-     {
+     
       let toDelete = confirm(`Are you sure you want to delete ${this.goals[index].name}?`)
 
       if (toDelete){
@@ -29,7 +32,7 @@ export class GoalComponent implements OnInit {
         this.alertService.alertMe("The goal has been deleted")
       }
     }
-  }
+  
     
     toggleDetails(index){
       this.goals[index].showDescription = !this.goals[index].showDescription;
@@ -40,7 +43,7 @@ export class GoalComponent implements OnInit {
       goal.completeDate = new Date(goal.completeDate)
       this.goals.push(goal)}
 
-    constructor(goalService:GoalService, alertService:AlertService,private http:HttpClient, private quoteService:QuoteRequestService,private router:Router) {
+    constructor(goalService:GoalService, alertService:AlertService, private http:HttpClient, private quoteService:QuoteRequestService, private router:Router) {
       this.goals = goalService.getGoals()
       this.alertService = alertService;
      }
@@ -51,6 +54,7 @@ export class GoalComponent implements OnInit {
         quote:string;
       }
   
+   
      this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data=>{
       this.quote = new Quote(data.author, data.quote)
     },err=>{
